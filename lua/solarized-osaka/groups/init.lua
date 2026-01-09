@@ -14,6 +14,7 @@ M.plugins = {
   ["vim-fern"]                      = "fern",
   ["gitsigns.nvim"]                 = "gitsigns",
   ["hop.nvim"]                      = "hop",
+  ["incline.nvim"]                  = "incline",
   ["indent-blankline.nvim"]         = "indent-blankline",
   ["leap.nvim"]                     = "leap",
   ["lspsaga.nvim"]                  = "lspsaga",
