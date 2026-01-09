@@ -165,7 +165,7 @@ CONFIGURATION                      *solarized-osaka.nvim-tokyo-night-configurati
 The theme offers four styles: |solarized-osaka.nvim-storm|, |solarized-osaka.nvim-moon|,
 |solarized-osaka.nvim-night|, and |solarized-osaka.nvim-day|.
 
-The |solarized-osaka.nvim-day| style is used when `{ style = "day" }` is passed to
+The |solarized-osaka.nvim-day| style is used when `{ style = "light" }` is passed to
 `setup(options)` or when `vim.o.background = "light"`.
 
 TokyoNight <https://github.com/craftzdog/solarized-osaka.nvim> uses the default options,

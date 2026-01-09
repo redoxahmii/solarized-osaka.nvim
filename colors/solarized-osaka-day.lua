@@ -1,1 +1,1 @@
-require("solarized-osaka")._load("day")
+require("solarized-osaka")._load("light")

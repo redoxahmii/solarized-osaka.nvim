@@ -74,13 +74,88 @@ M.default = {
   fg = hsl(186, 8, 55),
 }
 
+---@class Palette
+M.light = {
+  -- Inverted base colors
+  base04 = M.default.base4,
+  base03 = M.default.base3,
+  base02 = M.default.base2,
+  base01 = M.default.base1,
+  base00 = M.default.base0,
+  base0 = M.default.base00,
+  base1 = M.default.base01,
+  base2 = M.default.base02,
+  base3 = M.default.base03,
+  base4 = M.default.base04,
+
+  -- Inverted accent colors
+  yellow = M.default.yellow,
+  yellow100 = M.default.yellow900,
+  yellow300 = M.default.yellow700,
+  yellow500 = M.default.yellow500,
+  yellow700 = M.default.yellow300,
+  yellow900 = M.default.yellow100,
+
+  orange = M.default.orange,
+  orange100 = M.default.orange900,
+  orange300 = M.default.orange700,
+  orange500 = M.default.orange500,
+  orange700 = M.default.orange300,
+  orange900 = M.default.orange100,
+
+  red = M.default.red,
+  red100 = M.default.red900,
+  red300 = M.default.red700,
+  red500 = M.default.red500,
+  red700 = M.default.red300,
+  red900 = M.default.red100,
+
+  magenta = M.default.magenta,
+  magenta100 = M.default.magenta900,
+  magenta300 = M.default.magenta700,
+  magenta500 = M.default.magenta500,
+  magenta700 = M.default.magenta300,
+  magenta900 = M.default.magenta100,
+
+  violet = M.default.violet,
+  violet100 = M.default.violet900,
+  violet300 = M.default.violet700,
+  violet500 = M.default.violet500,
+  violet700 = M.default.violet300,
+  violet900 = M.default.violet100,
+
+  blue = M.default.blue,
+  blue100 = M.default.blue900,
+  blue300 = M.default.blue700,
+  blue500 = M.default.blue500,
+  blue700 = M.default.blue300,
+  blue900 = M.default.blue100,
+
+  cyan = M.default.cyan,
+  cyan100 = M.default.cyan900,
+  cyan300 = M.default.cyan700,
+  cyan500 = M.default.cyan500,
+  cyan700 = M.default.cyan300,
+  cyan900 = M.default.cyan100,
+
+  green = M.default.green,
+  green100 = M.default.green900,
+  green300 = M.default.green700,
+  green500 = M.default.green500,
+  green700 = M.default.green300,
+  green900 = M.default.green100,
+
+  bg = M.default.base3,
+  bg_highlight = M.default.base2,
+  fg = M.default.base01,
+}
+
 ---@return ColorScheme
 function M.setup(opts)
   opts = opts or {}
   local config = require("solarized-osaka.config")
 
-  -- local style = config.is_day() and config.options.light_style or config.options.style
-  local style = "default"
+  local style = config.is_light() and config.options.light_style or config.options.style
   local palette = M[style] or {}
   if type(palette) == "function" then
     palette = palette()
@@ -119,9 +194,6 @@ function M.setup(opts)
   colors.todo = colors.violet500
 
   config.options.on_colors(colors)
-  if opts.transform and config.is_day() then
-    util.invert_colors(colors)
-  end
 
   return colors
 end

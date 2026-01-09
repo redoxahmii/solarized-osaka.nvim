@@ -18,11 +18,6 @@ function M.setup()
   vim.o.termguicolors = true
   vim.g.colors_name = "solarized-osaka"
 
-  if opts.is_day() then
-    Util.invert_colors(colors)
-    Util.invert_highlights(groups)
-  end
-
   for group, hl in pairs(groups) do
     hl = type(hl) == "string" and { link = hl } or hl
     vim.api.nvim_set_hl(0, group, hl)
